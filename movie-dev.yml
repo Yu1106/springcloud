@@ -3,6 +3,15 @@ server:
 spring:
   application:
     name: microservice-movie
+  zipkin:
+    base-url: http://127.0.0.1:9041
+    sender:
+      # kafka, rabbit
+      type: web
+  sleuth:
+    sampler:
+      # 日誌更新頻率
+      probability: 1
 eureka:
   client:
     fetch-registry: true # 作為客戶端需要從Eureka獲取註冊訊息
